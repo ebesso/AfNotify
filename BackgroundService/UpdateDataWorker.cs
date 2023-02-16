@@ -25,7 +25,7 @@ namespace BackgroundWorker
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            var updateTimer = new Timer(UpdateData, null, 0, 10000);
+            var updateTimer = new Timer(UpdateData, null, 0, 1000 * 10); //Runs every 10 seconds.
             return Task.CompletedTask;
         }
 

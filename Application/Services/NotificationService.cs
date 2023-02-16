@@ -61,6 +61,8 @@ namespace Application.Services
             var units = await _unitRepository.GetAllAsync();
 
             var matched = _filterService.Filter(units, notification);
+                
+
 
             _emailService.SendEmail(notification.Email, matched);
         }

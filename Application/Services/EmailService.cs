@@ -30,7 +30,7 @@ namespace Application.Services
                 };
 
                 smtpClient.Send("afnotifysender@gmail.com", email, "New listings that matches your filter",
-                    string.Join(", ", units.Select(u => $"https://www.afbostader.se/lediga-bostader/bostadsdetalj/?obj={u.ProductId}&area={u.Area}&mode=0")));
+                    string.Join("\n", units.Select(u => $"https://www.afbostader.se/lediga-bostader/bostadsdetalj/?obj={u.ProductId}&area={u.Area}&mode=0")));
                 _logger.LogInformation($"Sent email to {email} about {string.Join(", ", units.Select(u => u.ProductId))}");
             }
         }

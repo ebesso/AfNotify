@@ -16,7 +16,7 @@ namespace Application.Services
             {
                 if(notification.MinFloor <= unit.Floor)
                 {
-                    if((notification.FurnitureIncluded && notification.FurnitureIncluded) || !notification.FurnitureIncluded)
+                    if((notification.FurnitureIncluded && unit.FurnitureIncluded) || !notification.FurnitureIncluded)
                     {
                         if(unit.Rent <= notification.MaxRent && unit.Rent >= notification.MinRent)
                         {
@@ -32,6 +32,7 @@ namespace Application.Services
                                         {
                                             if(unit.NovishPriority == notification.NovischPriority)
                                             {
+
                                                 if(notification.Areas.Count == 0 ||
                                                     notification.Areas.Count(a => a.Name == unit.Area) > 0)
                                                 {
